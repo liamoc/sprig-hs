@@ -7,7 +7,7 @@ Build-Type: Custom
 License-File: LICENSE
 Tested-With: GHC ==6.10
 License: BSD3
-Build-Depends: base, SDL>=0.5.9
+Build-Depends: base<5, SDL>=0.5.9
 Category: Foreign binding
 Synopsis: Binding to Sprig
 Description: Foreign Binding to Jonny D's SDL Primitives Generator (SPriG) library, a fork of SGE.
