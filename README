@@ -33,3 +33,4 @@ cabal haddock
 To generate an sdist, type:
 
 cabal sdist
+
