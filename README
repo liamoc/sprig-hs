@@ -10,6 +10,10 @@ write to:
 
 liamoc at cse dot unsw edu dot au
 
+The git repository of this project is located at
+
+location:  http://github.com/kamatsu/sprig-hs.git
+
 You need cabal, autoconf, SDL, HSSDL.
 
 To build, type:

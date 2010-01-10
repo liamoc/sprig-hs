@@ -1,0 +1,5 @@
+config.log
+config.mk
+config.status
+includes/HsSDLConfig.h
+sprig.buildinfo
