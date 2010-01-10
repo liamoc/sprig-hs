@@ -1,0 +1,30 @@
+SPriG Bindings for Haskell
+--------------------------
+
+This is an (incomplete) binding to Haskell for the SDL Primitive 
+Generator (SPriG) library developed by Jonny D. It is a fork of 
+the SGE primitives system, which exposes a fairly nice API.
+
+This binding is written by Liam O'Connor-Davis. To contact him,
+write to:
+
+liamoc at cse dot unsw edu dot au
+
+You need cabal, autoconf, SDL, HSSDL.
+
+To build, type:
+
+cabal configure
+cabal build
+
+To install, type:
+
+cabal install
+
+To generate documentation, type:
+
+cabal haddock
+
+To generate an sdist, type:
+
+cabal sdist
