@@ -3,3 +3,5 @@ config.mk
 config.status
 includes/HsSDLConfig.h
 sprig.buildinfo
+dist/*
+.*.swp
