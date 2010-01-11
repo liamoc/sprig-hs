@@ -1,5 +1,5 @@
 Name: Sprig
-Version: 0.1
+Version: 0.1.1
 Maintainer: Liam O'Connor (liamoc@cse.unsw.edu.au)
 Author: Liam O'Connor (liamoc@cse.unsw.edu.au)
 Copyright: 2010 Liam O'Connor
@@ -11,7 +11,7 @@ Homepage: http://liamoc.net/static/Sprig
 Build-Depends: base<5, SDL>=0.5.9
 Category: Foreign binding
 Synopsis: Binding to Sprig
-Description: Foreign Binding to Jonny D's SDL Primitives Generator (SPriG) library, a fork of SGE.
+Description: Foreign Binding to Jonny D's SDL Primitives Generator (SPriG) library, a fork of SGE. Haddock documentation is available from the homepage.
 Extensions: CPP, ForeignFunctionInterface, EmptyDataDecls
 Exposed-Modules:
   Graphics.UI.SDL.Sprig
