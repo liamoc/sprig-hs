@@ -1,0 +1,370 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--Rendered using the Haskell Html Library v0.2-->
+<HTML
+><HEAD
+><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8"
+><TITLE
+>Graphics.UI.SDL.Sprig.Drawing</TITLE
+><LINK HREF="haddock.css" REL="stylesheet" TYPE="text/css"
+><SCRIPT SRC="haddock-util.js" TYPE="text/javascript"
+></SCRIPT
+><SCRIPT TYPE="text/javascript"
+>window.onload = function () {setSynopsis("mini_Graphics-UI-SDL-Sprig-Drawing.html")};</SCRIPT
+></HEAD
+><BODY
+><TABLE CLASS="vanilla" CELLSPACING="0" CELLPADDING="0"
+><TR
+><TD CLASS="topbar"
+><TABLE CLASS="vanilla" CELLSPACING="0" CELLPADDING="0"
+><TR
+><TD
+><IMG SRC="haskell_icon.gif" WIDTH="16" HEIGHT="16" ALT=" "
+></TD
+><TD CLASS="title"
+>Sprig-0.1: Binding to Sprig</TD
+><TD CLASS="topbut"
+><A HREF="src/Graphics-UI-SDL-Sprig-Drawing.html"
+>Source code</A
+></TD
+><TD CLASS="topbut"
+><A HREF="index.html"
+>Contents</A
+></TD
+><TD CLASS="topbut"
+><A HREF="doc-index.html"
+>Index</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="modulebar"
+><TABLE CLASS="vanilla" CELLSPACING="0" CELLPADDING="0"
+><TR
+><TD
+><FONT SIZE="6"
+>Graphics.UI.SDL.Sprig.Drawing</FONT
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="section1"
+>Description</TD
+></TR
+><TR
+><TD CLASS="doc"
+>This modules contains functions for miscellaneous drawing operations that are not
+ adequately covered by the Primitives module
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="section1"
+>Synopsis</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="body"
+><TABLE CLASS="vanilla" CELLSPACING="0" CELLPADDING="0"
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3AgetPixel"
+>getPixel</A
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3Ablit"
+>blit</A
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/Data-Maybe.html#t%3AMaybe"
+>Maybe</A
+> <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Rect.html#t%3ARect"
+>Rect</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/Data-Maybe.html#t%3AMaybe"
+>Maybe</A
+> <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Rect.html#t%3ARect"
+>Rect</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Bool.html#t%3ABool"
+>Bool</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3AreplaceColor"
+>replaceColor</A
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/Data-Maybe.html#t%3AMaybe"
+>Maybe</A
+> <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Rect.html#t%3ARect"
+>Rect</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/Data-Maybe.html#t%3AMaybe"
+>Maybe</A
+> <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Rect.html#t%3ARect"
+>Rect</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3AfloodFill"
+>floodFill</A
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="section1"
+>Documentation</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="topdecl"
+><TABLE CLASS="declbar"
+><TR
+><TD CLASS="declname"
+><A NAME="v:getPixel"
+><A NAME="v%3AgetPixel"
+></A
+></A
+><B
+>getPixel</B
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+></TD
+><TD CLASS="declbut"
+><A HREF="src/Graphics-UI-SDL-Sprig-Drawing.html#getPixel"
+>Source</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="doc"
+>Get the color in a surface at a specific location
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="topdecl"
+><TABLE CLASS="declbar"
+><TR
+><TD CLASS="declname"
+><A NAME="v:blit"
+><A NAME="v%3Ablit"
+></A
+></A
+><B
+>blit</B
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/Data-Maybe.html#t%3AMaybe"
+>Maybe</A
+> <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Rect.html#t%3ARect"
+>Rect</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/Data-Maybe.html#t%3AMaybe"
+>Maybe</A
+> <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Rect.html#t%3ARect"
+>Rect</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Bool.html#t%3ABool"
+>Bool</A
+></TD
+><TD CLASS="declbut"
+><A HREF="src/Graphics-UI-SDL-Sprig-Drawing.html#blit"
+>Source</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="doc"
+>Blit one surface to another. Analogous to SDL's blitSurface function, except aware of Sprig's control stack (blend modes, etc.)
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="topdecl"
+><TABLE CLASS="declbar"
+><TR
+><TD CLASS="declname"
+><A NAME="v:replaceColor"
+><A NAME="v%3AreplaceColor"
+></A
+></A
+><B
+>replaceColor</B
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/Data-Maybe.html#t%3AMaybe"
+>Maybe</A
+> <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Rect.html#t%3ARect"
+>Rect</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/Data-Maybe.html#t%3AMaybe"
+>Maybe</A
+> <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Rect.html#t%3ARect"
+>Rect</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+></TD
+><TD CLASS="declbut"
+><A HREF="src/Graphics-UI-SDL-Sprig-Drawing.html#replaceColor"
+>Source</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="doc"
+>Returns a new surface with the given color replaced by the corresponding pixels from the src surface.  This is an effect similar to palette-swapping on 8-bit surfaces, but allows for images and gradients to replace the colors.
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="topdecl"
+><TABLE CLASS="declbar"
+><TR
+><TD CLASS="declname"
+><A NAME="v:floodFill"
+><A NAME="v%3AfloodFill"
+></A
+></A
+><B
+>floodFill</B
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+><TD CLASS="declbut"
+><A HREF="src/Graphics-UI-SDL-Sprig-Drawing.html#floodFill"
+>Source</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="doc"
+>Fill all color contiguous pixels to the indicated one with the specified color.
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="botbar"
+>Produced by <A HREF="http://www.haskell.org/haddock/"
+>Haddock</A
+> version 2.4.2</TD
+></TR
+></TABLE
+></BODY
+></HTML
+>

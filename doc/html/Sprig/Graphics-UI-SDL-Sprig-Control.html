@@ -1,0 +1,1179 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--Rendered using the Haskell Html Library v0.2-->
+<HTML
+><HEAD
+><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8"
+><TITLE
+>Graphics.UI.SDL.Sprig.Control</TITLE
+><LINK HREF="haddock.css" REL="stylesheet" TYPE="text/css"
+><SCRIPT SRC="haddock-util.js" TYPE="text/javascript"
+></SCRIPT
+><SCRIPT TYPE="text/javascript"
+>window.onload = function () {setSynopsis("mini_Graphics-UI-SDL-Sprig-Control.html")};</SCRIPT
+></HEAD
+><BODY
+><TABLE CLASS="vanilla" CELLSPACING="0" CELLPADDING="0"
+><TR
+><TD CLASS="topbar"
+><TABLE CLASS="vanilla" CELLSPACING="0" CELLPADDING="0"
+><TR
+><TD
+><IMG SRC="haskell_icon.gif" WIDTH="16" HEIGHT="16" ALT=" "
+></TD
+><TD CLASS="title"
+>Sprig-0.1: Binding to Sprig</TD
+><TD CLASS="topbut"
+><A HREF="src/Graphics-UI-SDL-Sprig-Control.html"
+>Source code</A
+></TD
+><TD CLASS="topbut"
+><A HREF="index.html"
+>Contents</A
+></TD
+><TD CLASS="topbut"
+><A HREF="doc-index.html"
+>Index</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="modulebar"
+><TABLE CLASS="vanilla" CELLSPACING="0" CELLPADDING="0"
+><TR
+><TD
+><FONT SIZE="6"
+>Graphics.UI.SDL.Sprig.Control</FONT
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="section1"
+>Description</TD
+></TR
+><TR
+><TD CLASS="doc"
+><P
+>Sprig uses a settings stack to control various settings such as antialiasing, line thickness
+ and blend modes.
+</P
+><P
+>The setting currently at the top of the stack is used by relevant functions
+</P
+><P
+>This module contains functions to manipulate this stack.
+</P
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="section1"
+>Synopsis</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="body"
+><TABLE CLASS="vanilla" CELLSPACING="0" CELLPADDING="0"
+><TR
+><TD CLASS="decl"
+><TABLE CLASS="vanilla" CELLSPACING="0" CELLPADDING="0"
+><TR
+><TD CLASS="decl"
+><SPAN CLASS="keyword"
+>data</SPAN
+>  <A HREF="#t%3ABlendMode"
+>BlendMode</A
+>  </TD
+></TR
+><TR
+><TD CLASS="body"
+><TABLE CLASS="vanilla" CELLSPACING="0" CELLPADDING="0"
+><TR
+><TD CLASS="decl"
+>= <A HREF="#v%3ADestAlpha"
+>DestAlpha</A
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+>| <A HREF="#v%3ASrcAlpha"
+>SrcAlpha</A
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+>| <A HREF="#v%3ACombineAlpha"
+>CombineAlpha</A
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+>| <A HREF="#v%3ACopyNoAlpha"
+>CopyNoAlpha</A
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+>| <A HREF="#v%3ACopySrcAlpha"
+>CopySrcAlpha</A
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+>| <A HREF="#v%3ACopyDestAlpha"
+>CopyDestAlpha</A
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+>| <A HREF="#v%3ACopyCombineAlpha"
+>CopyCombineAlpha</A
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+>| <A HREF="#v%3ACopyAlphaOnly"
+>CopyAlphaOnly</A
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+>| <A HREF="#v%3ACombineAlphaOnly"
+>CombineAlphaOnly</A
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+>| <A HREF="#v%3AReplaceColorKey"
+>ReplaceColorKey</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3Alock"
+>lock</A
+> :: <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Bool.html#t%3ABool"
+>Bool</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3AgetLock"
+>getLock</A
+> :: <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Bool.html#t%3ABool"
+>Bool</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3AenableRadians"
+>enableRadians</A
+> :: <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Bool.html#t%3ABool"
+>Bool</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3AgetRadians"
+>getRadians</A
+> :: <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Bool.html#t%3ABool"
+>Bool</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3ApushBlend"
+>pushBlend</A
+> :: <A HREF="Graphics-UI-SDL-Sprig-Control.html#t%3ABlendMode"
+>BlendMode</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3ApopBlend"
+>popBlend</A
+> :: <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="Graphics-UI-SDL-Sprig-Control.html#t%3ABlendMode"
+>BlendMode</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3AgetBlend"
+>getBlend</A
+> :: <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="Graphics-UI-SDL-Sprig-Control.html#t%3ABlendMode"
+>BlendMode</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3ApushThickness"
+>pushThickness</A
+> :: <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3ApopThickness"
+>popThickness</A
+> :: <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3AgetThickness"
+>getThickness</A
+> :: <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3ApushAA"
+>pushAA</A
+> :: <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Bool.html#t%3ABool"
+>Bool</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3ApopAA"
+>popAA</A
+> :: <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Bool.html#t%3ABool"
+>Bool</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3AgetAA"
+>getAA</A
+> :: <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Bool.html#t%3ABool"
+>Bool</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3ApushSurfaceAlpha"
+>pushSurfaceAlpha</A
+> :: <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Bool.html#t%3ABool"
+>Bool</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3ApopSurfaceAlpha"
+>popSurfaceAlpha</A
+> :: <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Bool.html#t%3ABool"
+>Bool</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3AgetSurfaceAlpha"
+>getSurfaceAlpha</A
+> :: <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Bool.html#t%3ABool"
+>Bool</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="section1"
+>Documentation</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="topdecl"
+><TABLE CLASS="declbar"
+><TR
+><TD CLASS="declname"
+><SPAN CLASS="keyword"
+>data</SPAN
+>  <A NAME="t:BlendMode"
+><A NAME="t%3ABlendMode"
+></A
+></A
+><B
+>BlendMode</B
+>  </TD
+><TD CLASS="declbut"
+><A HREF="src/Graphics-UI-SDL-Sprig-Control.html#BlendMode"
+>Source</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="body"
+><TABLE CLASS="vanilla" CELLSPACING="0" CELLPADDING="0"
+><TR
+><TD CLASS="ndoc"
+>Blend modes used for blitting and drawing
+</TD
+></TR
+><TR
+><TD CLASS="section4"
+>Constructors</TD
+></TR
+><TR
+><TD CLASS="body"
+><TABLE CLASS="vanilla" CELLSPACING="1" CELLPADDING="0"
+><TR
+><TD CLASS="arg"
+><A NAME="v:DestAlpha"
+><A NAME="v%3ADestAlpha"
+></A
+></A
+><B
+>DestAlpha</B
+></TD
+><TD CLASS="rdoc"
+>Blends colors normally and keeps the destination per-pixel alpha.  This is the same as SDL_BlitSurface's blending.
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+><A NAME="v:SrcAlpha"
+><A NAME="v%3ASrcAlpha"
+></A
+></A
+><B
+>SrcAlpha</B
+></TD
+><TD CLASS="rdoc"
+>Blends colors and copies the source alpha.
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+><A NAME="v:CombineAlpha"
+><A NAME="v%3ACombineAlpha"
+></A
+></A
+><B
+>CombineAlpha</B
+></TD
+><TD CLASS="rdoc"
+>Blends colors and blends the alpha.  This is true blending and lends well to some neat compositing effects.                                                                                                                       
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+><A NAME="v:CopyNoAlpha"
+><A NAME="v%3ACopyNoAlpha"
+></A
+></A
+><B
+>CopyNoAlpha</B
+></TD
+><TD CLASS="rdoc"
+>Copies the source color, sets the dest alpha to opaque.                                                                                                                                                                             
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+><A NAME="v:CopySrcAlpha"
+><A NAME="v%3ACopySrcAlpha"
+></A
+></A
+><B
+>CopySrcAlpha</B
+></TD
+><TD CLASS="rdoc"
+>Copies the source color, keeps the dest alpha.                                                                                                                                                                                      
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+><A NAME="v:CopyDestAlpha"
+><A NAME="v%3ACopyDestAlpha"
+></A
+></A
+><B
+>CopyDestAlpha</B
+></TD
+><TD CLASS="rdoc"
+>Copies the source color and alpha.                                                                                                                                                                                                  
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+><A NAME="v:CopyCombineAlpha"
+><A NAME="v%3ACopyCombineAlpha"
+></A
+></A
+><B
+>CopyCombineAlpha</B
+></TD
+><TD CLASS="rdoc"
+>Copies the source color and blends the alpha.                                                                                                                                                                                       
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+><A NAME="v:CopyAlphaOnly"
+><A NAME="v%3ACopyAlphaOnly"
+></A
+></A
+><B
+>CopyAlphaOnly</B
+></TD
+><TD CLASS="rdoc"
+>Keeps the dest color, but copies the source alpha.                                                                                                                                                                                  
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+><A NAME="v:CombineAlphaOnly"
+><A NAME="v%3ACombineAlphaOnly"
+></A
+></A
+><B
+>CombineAlphaOnly</B
+></TD
+><TD CLASS="rdoc"
+>Keeps the dest color, but blends the alpha.                                                                                                                                                                                         
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+><A NAME="v:ReplaceColorKey"
+><A NAME="v%3AReplaceColorKey"
+></A
+></A
+><B
+>ReplaceColorKey</B
+></TD
+><TD CLASS="rdoc"
+>If the destination surface has the SDL_SRCCOLORKEY flag, this replaces the dest colorkey color in the image with the source color and alpha.  This is similar to palette-swapping, but can be used with gradients and other images. 
+</TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="section4"
+><IMG SRC="minus.gif" CLASS="coll" ONCLICK="toggle(this,'i:BlendMode')" ALT="show/hide"
+> Instances</TD
+></TR
+><TR
+><TD CLASS="body"
+><DIV ID="i:BlendMode" STYLE="display:block;"
+><TABLE CLASS="vanilla" CELLSPACING="1" CELLPADDING="0"
+><TR
+><TD CLASS="decl"
+><A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/Data-Eq.html#t%3AEq"
+>Eq</A
+> <A HREF="Graphics-UI-SDL-Sprig-Control.html#t%3ABlendMode"
+>BlendMode</A
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/Text-Show.html#t%3AShow"
+>Show</A
+> <A HREF="Graphics-UI-SDL-Sprig-Control.html#t%3ABlendMode"
+>BlendMode</A
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="topdecl"
+><TABLE CLASS="declbar"
+><TR
+><TD CLASS="declname"
+><A NAME="v:lock"
+><A NAME="v%3Alock"
+></A
+></A
+><B
+>lock</B
+> :: <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Bool.html#t%3ABool"
+>Bool</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+><TD CLASS="declbut"
+><A HREF="src/Graphics-UI-SDL-Sprig-Control.html#lock"
+>Source</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="doc"
+>Enable or disable auto lock
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="topdecl"
+><TABLE CLASS="declbar"
+><TR
+><TD CLASS="declname"
+><A NAME="v:getLock"
+><A NAME="v%3AgetLock"
+></A
+></A
+><B
+>getLock</B
+> :: <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Bool.html#t%3ABool"
+>Bool</A
+></TD
+><TD CLASS="declbut"
+><A HREF="src/Graphics-UI-SDL-Sprig-Control.html#getLock"
+>Source</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="doc"
+>Get auto lock state
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="topdecl"
+><TABLE CLASS="declbar"
+><TR
+><TD CLASS="declname"
+><A NAME="v:enableRadians"
+><A NAME="v%3AenableRadians"
+></A
+></A
+><B
+>enableRadians</B
+> :: <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Bool.html#t%3ABool"
+>Bool</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+><TD CLASS="declbut"
+><A HREF="src/Graphics-UI-SDL-Sprig-Control.html#enableRadians"
+>Source</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="doc"
+>Enable or disable radian measures 
+ Eliminates a degrees -&gt; radians conversion, as radians are used internally
+ Defaults to False.
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="topdecl"
+><TABLE CLASS="declbar"
+><TR
+><TD CLASS="declname"
+><A NAME="v:getRadians"
+><A NAME="v%3AgetRadians"
+></A
+></A
+><B
+>getRadians</B
+> :: <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Bool.html#t%3ABool"
+>Bool</A
+></TD
+><TD CLASS="declbut"
+><A HREF="src/Graphics-UI-SDL-Sprig-Control.html#getRadians"
+>Source</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="doc"
+>Determine if radians are being used as the angle measure
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="topdecl"
+><TABLE CLASS="declbar"
+><TR
+><TD CLASS="declname"
+><A NAME="v:pushBlend"
+><A NAME="v%3ApushBlend"
+></A
+></A
+><B
+>pushBlend</B
+> :: <A HREF="Graphics-UI-SDL-Sprig-Control.html#t%3ABlendMode"
+>BlendMode</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+><TD CLASS="declbut"
+><A HREF="src/Graphics-UI-SDL-Sprig-Control.html#pushBlend"
+>Source</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="doc"
+>Push a blend mode to the control stack
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="topdecl"
+><TABLE CLASS="declbar"
+><TR
+><TD CLASS="declname"
+><A NAME="v:popBlend"
+><A NAME="v%3ApopBlend"
+></A
+></A
+><B
+>popBlend</B
+> :: <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="Graphics-UI-SDL-Sprig-Control.html#t%3ABlendMode"
+>BlendMode</A
+></TD
+><TD CLASS="declbut"
+><A HREF="src/Graphics-UI-SDL-Sprig-Control.html#popBlend"
+>Source</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="doc"
+>Pops the most recent blend mode from the stack and returns it.
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="topdecl"
+><TABLE CLASS="declbar"
+><TR
+><TD CLASS="declname"
+><A NAME="v:getBlend"
+><A NAME="v%3AgetBlend"
+></A
+></A
+><B
+>getBlend</B
+> :: <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="Graphics-UI-SDL-Sprig-Control.html#t%3ABlendMode"
+>BlendMode</A
+></TD
+><TD CLASS="declbut"
+><A HREF="src/Graphics-UI-SDL-Sprig-Control.html#getBlend"
+>Source</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="doc"
+>Get the current blend mode 
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="topdecl"
+><TABLE CLASS="declbar"
+><TR
+><TD CLASS="declname"
+><A NAME="v:pushThickness"
+><A NAME="v%3ApushThickness"
+></A
+></A
+><B
+>pushThickness</B
+> :: <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+><TD CLASS="declbut"
+><A HREF="src/Graphics-UI-SDL-Sprig-Control.html#pushThickness"
+>Source</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="doc"
+>Pushes a line thickness for primitives to the stack
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="topdecl"
+><TABLE CLASS="declbar"
+><TR
+><TD CLASS="declname"
+><A NAME="v:popThickness"
+><A NAME="v%3ApopThickness"
+></A
+></A
+><B
+>popThickness</B
+> :: <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+></TD
+><TD CLASS="declbut"
+><A HREF="src/Graphics-UI-SDL-Sprig-Control.html#popThickness"
+>Source</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="doc"
+>Pops the current thickness from the stack, and returns it.
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="topdecl"
+><TABLE CLASS="declbar"
+><TR
+><TD CLASS="declname"
+><A NAME="v:getThickness"
+><A NAME="v%3AgetThickness"
+></A
+></A
+><B
+>getThickness</B
+> :: <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+></TD
+><TD CLASS="declbut"
+><A HREF="src/Graphics-UI-SDL-Sprig-Control.html#getThickness"
+>Source</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="doc"
+>Gets the current thickness for primitives
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="topdecl"
+><TABLE CLASS="declbar"
+><TR
+><TD CLASS="declname"
+><A NAME="v:pushAA"
+><A NAME="v%3ApushAA"
+></A
+></A
+><B
+>pushAA</B
+> :: <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Bool.html#t%3ABool"
+>Bool</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+><TD CLASS="declbut"
+><A HREF="src/Graphics-UI-SDL-Sprig-Control.html#pushAA"
+>Source</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="doc"
+>Push an antialias setting to the control stack 
+ Default state is false
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="topdecl"
+><TABLE CLASS="declbar"
+><TR
+><TD CLASS="declname"
+><A NAME="v:popAA"
+><A NAME="v%3ApopAA"
+></A
+></A
+><B
+>popAA</B
+> :: <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Bool.html#t%3ABool"
+>Bool</A
+></TD
+><TD CLASS="declbut"
+><A HREF="src/Graphics-UI-SDL-Sprig-Control.html#popAA"
+>Source</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="doc"
+>Pop the antialias state from the stack, and return it.
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="topdecl"
+><TABLE CLASS="declbar"
+><TR
+><TD CLASS="declname"
+><A NAME="v:getAA"
+><A NAME="v%3AgetAA"
+></A
+></A
+><B
+>getAA</B
+> :: <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Bool.html#t%3ABool"
+>Bool</A
+></TD
+><TD CLASS="declbut"
+><A HREF="src/Graphics-UI-SDL-Sprig-Control.html#getAA"
+>Source</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="doc"
+>Get the current antialias state
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="topdecl"
+><TABLE CLASS="declbar"
+><TR
+><TD CLASS="declname"
+><A NAME="v:pushSurfaceAlpha"
+><A NAME="v%3ApushSurfaceAlpha"
+></A
+></A
+><B
+>pushSurfaceAlpha</B
+> :: <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Bool.html#t%3ABool"
+>Bool</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+><TD CLASS="declbut"
+><A HREF="src/Graphics-UI-SDL-Sprig-Control.html#pushSurfaceAlpha"
+>Source</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="doc"
+>Pushes a setting to enable or disable surface-alpha mode.
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="topdecl"
+><TABLE CLASS="declbar"
+><TR
+><TD CLASS="declname"
+><A NAME="v:popSurfaceAlpha"
+><A NAME="v%3ApopSurfaceAlpha"
+></A
+></A
+><B
+>popSurfaceAlpha</B
+> :: <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Bool.html#t%3ABool"
+>Bool</A
+></TD
+><TD CLASS="declbut"
+><A HREF="src/Graphics-UI-SDL-Sprig-Control.html#popSurfaceAlpha"
+>Source</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="doc"
+>Pops the current surface-alpha setting from the stack, and returns it.
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="topdecl"
+><TABLE CLASS="declbar"
+><TR
+><TD CLASS="declname"
+><A NAME="v:getSurfaceAlpha"
+><A NAME="v%3AgetSurfaceAlpha"
+></A
+></A
+><B
+>getSurfaceAlpha</B
+> :: <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Bool.html#t%3ABool"
+>Bool</A
+></TD
+><TD CLASS="declbut"
+><A HREF="src/Graphics-UI-SDL-Sprig-Control.html#getSurfaceAlpha"
+>Source</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="doc"
+>Gets the current surface-alpha setting
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="botbar"
+>Produced by <A HREF="http://www.haskell.org/haddock/"
+>Haddock</A
+> version 2.4.2</TD
+></TR
+></TABLE
+></BODY
+></HTML
+>

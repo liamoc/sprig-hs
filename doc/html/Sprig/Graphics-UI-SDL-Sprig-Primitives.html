@@ -1,0 +1,3742 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--Rendered using the Haskell Html Library v0.2-->
+<HTML
+><HEAD
+><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8"
+><TITLE
+>Graphics.UI.SDL.Sprig.Primitives</TITLE
+><LINK HREF="haddock.css" REL="stylesheet" TYPE="text/css"
+><SCRIPT SRC="haddock-util.js" TYPE="text/javascript"
+></SCRIPT
+><SCRIPT TYPE="text/javascript"
+>window.onload = function () {setSynopsis("mini_Graphics-UI-SDL-Sprig-Primitives.html")};</SCRIPT
+></HEAD
+><BODY
+><TABLE CLASS="vanilla" CELLSPACING="0" CELLPADDING="0"
+><TR
+><TD CLASS="topbar"
+><TABLE CLASS="vanilla" CELLSPACING="0" CELLPADDING="0"
+><TR
+><TD
+><IMG SRC="haskell_icon.gif" WIDTH="16" HEIGHT="16" ALT=" "
+></TD
+><TD CLASS="title"
+>Sprig-0.1: Binding to Sprig</TD
+><TD CLASS="topbut"
+><A HREF="src/Graphics-UI-SDL-Sprig-Primitives.html"
+>Source code</A
+></TD
+><TD CLASS="topbut"
+><A HREF="index.html"
+>Contents</A
+></TD
+><TD CLASS="topbut"
+><A HREF="doc-index.html"
+>Index</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="modulebar"
+><TABLE CLASS="vanilla" CELLSPACING="0" CELLPADDING="0"
+><TR
+><TD
+><FONT SIZE="6"
+>Graphics.UI.SDL.Sprig.Primitives</FONT
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD
+><TABLE CLASS="vanilla" CELLSPACING="0" CELLPADDING="0"
+><TR
+><TD CLASS="section4"
+><B
+>Contents</B
+></TD
+></TR
+><TR
+><TD
+><DL
+><DT
+><A HREF="#1"
+>Pixel functions
+</A
+></DT
+><DT
+><A HREF="#2"
+>Circle functions
+</A
+></DT
+><DT
+><A HREF="#3"
+>Line Functions
+</A
+></DT
+><DT
+><A HREF="#4"
+>Rectangle functions
+</A
+></DT
+><DT
+><A HREF="#5"
+>Arc functions
+</A
+></DT
+><DT
+><A HREF="#6"
+>Ellipse functions
+</A
+></DT
+><DT
+><A HREF="#7"
+>Bezier curve functions
+</A
+></DT
+></DL
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="section1"
+>Description</TD
+></TR
+><TR
+><TD CLASS="doc"
+>This module contains a large collection of drawing primitives for use on SDL surface.
+ They are all sensitive to line thickness, antialiasing and blendmode settings as specified
+ in the control module.
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="section1"
+>Synopsis</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="body"
+><TABLE CLASS="vanilla" CELLSPACING="0" CELLPADDING="0"
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3Apixel"
+>pixel</A
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3ApixelBlend"
+>pixelBlend</A
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/Data-Word.html#t%3AWord8"
+>Word8</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3Acircle"
+>circle</A
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3AcircleFilled"
+>circleFilled</A
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3AcircleBlend"
+>circleBlend</A
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/Data-Word.html#t%3AWord8"
+>Word8</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3AcircleFilledBlend"
+>circleFilledBlend</A
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/Data-Word.html#t%3AWord8"
+>Word8</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3AlineH"
+>lineH</A
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3AlineHBlend"
+>lineHBlend</A
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/Data-Word.html#t%3AWord8"
+>Word8</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3AlineHFade"
+>lineHFade</A
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3AlineHTex"
+>lineHTex</A
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3AlineV"
+>lineV</A
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3AlineVBlend"
+>lineVBlend</A
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/Data-Word.html#t%3AWord8"
+>Word8</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3Aline"
+>line</A
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3AlineBlend"
+>lineBlend</A
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/Data-Word.html#t%3AWord8"
+>Word8</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3AlineFade"
+>lineFade</A
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3AlineFadeBlend"
+>lineFadeBlend</A
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/Data-Word.html#t%3AWord8"
+>Word8</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/Data-Word.html#t%3AWord8"
+>Word8</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3Arect"
+>rect</A
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3ArectFilled"
+>rectFilled</A
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3ArectBlend"
+>rectBlend</A
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/Data-Word.html#t%3AWord8"
+>Word8</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3ArectFilledBlend"
+>rectFilledBlend</A
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/Data-Word.html#t%3AWord8"
+>Word8</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3ArectRound"
+>rectRound</A
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3ArectRoundBlend"
+>rectRoundBlend</A
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/Data-Word.html#t%3AWord8"
+>Word8</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3ArectRoundFilled"
+>rectRoundFilled</A
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3ArectRoundFilledBlend"
+>rectRoundFilledBlend</A
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/Data-Word.html#t%3AWord8"
+>Word8</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3Aarc"
+>arc</A
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3AarcBlend"
+>arcBlend</A
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/Data-Word.html#t%3AWord8"
+>Word8</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3AarcFilled"
+>arcFilled</A
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3AarcFilledBlend"
+>arcFilledBlend</A
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/Data-Word.html#t%3AWord8"
+>Word8</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3Aellipse"
+>ellipse</A
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3AellipseBlend"
+>ellipseBlend</A
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/Data-Word.html#t%3AWord8"
+>Word8</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3AellipseFilled"
+>ellipseFilled</A
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3AellipseFilledBlend"
+>ellipseFilledBlend</A
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/Data-Word.html#t%3AWord8"
+>Word8</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3AellipseArb"
+>ellipseArb</A
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3AellipseBlendArb"
+>ellipseBlendArb</A
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/Data-Word.html#t%3AWord8"
+>Word8</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3AellipseFilledBlendArb"
+>ellipseFilledBlendArb</A
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/Data-Word.html#t%3AWord8"
+>Word8</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3AellipseFilledArb"
+>ellipseFilledArb</A
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3Abezier"
+>bezier</A
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/Data-Word.html#t%3AWord8"
+>Word8</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3AbezierBlend"
+>bezierBlend</A
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/Data-Word.html#t%3AWord8"
+>Word8</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/Data-Word.html#t%3AWord8"
+>Word8</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="section1"
+><A NAME="1"
+><A NAME="1"
+>Pixel functions
+</A
+></A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="topdecl"
+><TABLE CLASS="declbar"
+><TR
+><TD CLASS="declname"
+><A NAME="v:pixel"
+><A NAME="v%3Apixel"
+></A
+></A
+><B
+>pixel</B
+></TD
+><TD CLASS="declbut"
+><A HREF="src/Graphics-UI-SDL-Sprig-Primitives.html#pixel"
+>Source</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="body"
+><TABLE CLASS="vanilla" CELLSPACING="0" CELLPADDING="0"
+><TR
+><TD CLASS="arg"
+>:: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+></TD
+><TD CLASS="rdoc"
+>SDL destination Surface 
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+></TD
+><TD CLASS="rdoc"
+>X 
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+></TD
+><TD CLASS="rdoc"
+>Y
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+></TD
+><TD CLASS="rdoc"
+>New color
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+><TD CLASS="rdoc"
+></TD
+></TR
+><TR
+><TD CLASS="ndoc" COLSPAN="2"
+>Set the color of a specific pixel on an SDL surface.
+</TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="topdecl"
+><TABLE CLASS="declbar"
+><TR
+><TD CLASS="declname"
+><A NAME="v:pixelBlend"
+><A NAME="v%3ApixelBlend"
+></A
+></A
+><B
+>pixelBlend</B
+></TD
+><TD CLASS="declbut"
+><A HREF="src/Graphics-UI-SDL-Sprig-Primitives.html#pixelBlend"
+>Source</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="body"
+><TABLE CLASS="vanilla" CELLSPACING="0" CELLPADDING="0"
+><TR
+><TD CLASS="arg"
+>:: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+></TD
+><TD CLASS="rdoc"
+>SDL destination Surface 
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+></TD
+><TD CLASS="rdoc"
+>X
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+></TD
+><TD CLASS="rdoc"
+>Y
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+></TD
+><TD CLASS="rdoc"
+>New color
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/Data-Word.html#t%3AWord8"
+>Word8</A
+></TD
+><TD CLASS="rdoc"
+>(0-255) Level of alpha blending
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+><TD CLASS="rdoc"
+></TD
+></TR
+><TR
+><TD CLASS="ndoc" COLSPAN="2"
+>Alter the color of a specific pixel on an SDL surface to the specified color, with alpha blending.
+</TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="section1"
+><A NAME="2"
+><A NAME="2"
+>Circle functions
+</A
+></A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="topdecl"
+><TABLE CLASS="declbar"
+><TR
+><TD CLASS="declname"
+><A NAME="v:circle"
+><A NAME="v%3Acircle"
+></A
+></A
+><B
+>circle</B
+></TD
+><TD CLASS="declbut"
+><A HREF="src/Graphics-UI-SDL-Sprig-Primitives.html#circle"
+>Source</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="body"
+><TABLE CLASS="vanilla" CELLSPACING="0" CELLPADDING="0"
+><TR
+><TD CLASS="arg"
+>:: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+></TD
+><TD CLASS="rdoc"
+>SDL destination surface
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+></TD
+><TD CLASS="rdoc"
+>X (center)
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+></TD
+><TD CLASS="rdoc"
+>Y (center)
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+></TD
+><TD CLASS="rdoc"
+>Radius
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+></TD
+><TD CLASS="rdoc"
+>Color
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+><TD CLASS="rdoc"
+></TD
+></TR
+><TR
+><TD CLASS="ndoc" COLSPAN="2"
+>Draw a circle
+</TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="topdecl"
+><TABLE CLASS="declbar"
+><TR
+><TD CLASS="declname"
+><A NAME="v:circleFilled"
+><A NAME="v%3AcircleFilled"
+></A
+></A
+><B
+>circleFilled</B
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+><TD CLASS="declbut"
+><A HREF="src/Graphics-UI-SDL-Sprig-Primitives.html#circleFilled"
+>Source</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="doc"
+>Draw a filled circle
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="topdecl"
+><TABLE CLASS="declbar"
+><TR
+><TD CLASS="declname"
+><A NAME="v:circleBlend"
+><A NAME="v%3AcircleBlend"
+></A
+></A
+><B
+>circleBlend</B
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/Data-Word.html#t%3AWord8"
+>Word8</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+><TD CLASS="declbut"
+><A HREF="src/Graphics-UI-SDL-Sprig-Primitives.html#circleBlend"
+>Source</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="doc"
+>Draw a circle, with alpha blending               
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="topdecl"
+><TABLE CLASS="declbar"
+><TR
+><TD CLASS="declname"
+><A NAME="v:circleFilledBlend"
+><A NAME="v%3AcircleFilledBlend"
+></A
+></A
+><B
+>circleFilledBlend</B
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/Data-Word.html#t%3AWord8"
+>Word8</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+><TD CLASS="declbut"
+><A HREF="src/Graphics-UI-SDL-Sprig-Primitives.html#circleFilledBlend"
+>Source</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="doc"
+>Draw a filled circle, with alpha blending
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="section1"
+><A NAME="3"
+><A NAME="3"
+>Line Functions
+</A
+></A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="topdecl"
+><TABLE CLASS="declbar"
+><TR
+><TD CLASS="declname"
+><A NAME="v:lineH"
+><A NAME="v%3AlineH"
+></A
+></A
+><B
+>lineH</B
+></TD
+><TD CLASS="declbut"
+><A HREF="src/Graphics-UI-SDL-Sprig-Primitives.html#lineH"
+>Source</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="body"
+><TABLE CLASS="vanilla" CELLSPACING="0" CELLPADDING="0"
+><TR
+><TD CLASS="arg"
+>:: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+></TD
+><TD CLASS="rdoc"
+>SDL destination surface
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+></TD
+><TD CLASS="rdoc"
+>Start X 
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+></TD
+><TD CLASS="rdoc"
+>End X
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+></TD
+><TD CLASS="rdoc"
+>Y
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+></TD
+><TD CLASS="rdoc"
+>Color
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+><TD CLASS="rdoc"
+></TD
+></TR
+><TR
+><TD CLASS="ndoc" COLSPAN="2"
+>Draw a horizontal line
+</TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="topdecl"
+><TABLE CLASS="declbar"
+><TR
+><TD CLASS="declname"
+><A NAME="v:lineHBlend"
+><A NAME="v%3AlineHBlend"
+></A
+></A
+><B
+>lineHBlend</B
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/Data-Word.html#t%3AWord8"
+>Word8</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+><TD CLASS="declbut"
+><A HREF="src/Graphics-UI-SDL-Sprig-Primitives.html#lineHBlend"
+>Source</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="doc"
+>Draw a horizontal line, with alpha blending
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="topdecl"
+><TABLE CLASS="declbar"
+><TR
+><TD CLASS="declname"
+><A NAME="v:lineHFade"
+><A NAME="v%3AlineHFade"
+></A
+></A
+><B
+>lineHFade</B
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+><TD CLASS="declbut"
+><A HREF="src/Graphics-UI-SDL-Sprig-Primitives.html#lineHFade"
+>Source</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="doc"
+>Draw a horizontal line with a gradient fill                                                                                  
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="topdecl"
+><TABLE CLASS="declbar"
+><TR
+><TD CLASS="declname"
+><A NAME="v:lineHTex"
+><A NAME="v%3AlineHTex"
+></A
+></A
+><B
+>lineHTex</B
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+><TD CLASS="declbut"
+><A HREF="src/Graphics-UI-SDL-Sprig-Primitives.html#lineHTex"
+>Source</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="doc"
+>Draw a horizontal line with a textured fill                                  
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="topdecl"
+><TABLE CLASS="declbar"
+><TR
+><TD CLASS="declname"
+><A NAME="v:lineV"
+><A NAME="v%3AlineV"
+></A
+></A
+><B
+>lineV</B
+></TD
+><TD CLASS="declbut"
+><A HREF="src/Graphics-UI-SDL-Sprig-Primitives.html#lineV"
+>Source</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="body"
+><TABLE CLASS="vanilla" CELLSPACING="0" CELLPADDING="0"
+><TR
+><TD CLASS="arg"
+>:: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+></TD
+><TD CLASS="rdoc"
+>SDL destination surface
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+></TD
+><TD CLASS="rdoc"
+>X
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+></TD
+><TD CLASS="rdoc"
+>Start Y
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+></TD
+><TD CLASS="rdoc"
+>End Y
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+></TD
+><TD CLASS="rdoc"
+>Color
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+><TD CLASS="rdoc"
+></TD
+></TR
+><TR
+><TD CLASS="ndoc" COLSPAN="2"
+>Draw a vertical line
+</TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="topdecl"
+><TABLE CLASS="declbar"
+><TR
+><TD CLASS="declname"
+><A NAME="v:lineVBlend"
+><A NAME="v%3AlineVBlend"
+></A
+></A
+><B
+>lineVBlend</B
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/Data-Word.html#t%3AWord8"
+>Word8</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+><TD CLASS="declbut"
+><A HREF="src/Graphics-UI-SDL-Sprig-Primitives.html#lineVBlend"
+>Source</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="doc"
+>Draw a vertical line, with alpha blending           
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="topdecl"
+><TABLE CLASS="declbar"
+><TR
+><TD CLASS="declname"
+><A NAME="v:line"
+><A NAME="v%3Aline"
+></A
+></A
+><B
+>line</B
+></TD
+><TD CLASS="declbut"
+><A HREF="src/Graphics-UI-SDL-Sprig-Primitives.html#line"
+>Source</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="body"
+><TABLE CLASS="vanilla" CELLSPACING="0" CELLPADDING="0"
+><TR
+><TD CLASS="arg"
+>:: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+></TD
+><TD CLASS="rdoc"
+>SDL destination surface
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+></TD
+><TD CLASS="rdoc"
+>Start X
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+></TD
+><TD CLASS="rdoc"
+>Start Y
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+></TD
+><TD CLASS="rdoc"
+>End X
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+></TD
+><TD CLASS="rdoc"
+>End Y
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+></TD
+><TD CLASS="rdoc"
+>Color
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+><TD CLASS="rdoc"
+></TD
+></TR
+><TR
+><TD CLASS="ndoc" COLSPAN="2"
+>Draw a line of arbitrary direction
+</TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="topdecl"
+><TABLE CLASS="declbar"
+><TR
+><TD CLASS="declname"
+><A NAME="v:lineBlend"
+><A NAME="v%3AlineBlend"
+></A
+></A
+><B
+>lineBlend</B
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/Data-Word.html#t%3AWord8"
+>Word8</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+><TD CLASS="declbut"
+><A HREF="src/Graphics-UI-SDL-Sprig-Primitives.html#lineBlend"
+>Source</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="doc"
+>Draw a line with alpha blending
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="topdecl"
+><TABLE CLASS="declbar"
+><TR
+><TD CLASS="declname"
+><A NAME="v:lineFade"
+><A NAME="v%3AlineFade"
+></A
+></A
+><B
+>lineFade</B
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+><TD CLASS="declbut"
+><A HREF="src/Graphics-UI-SDL-Sprig-Primitives.html#lineFade"
+>Source</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="doc"
+>Draw a line with a gradient fill (between two colors)
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="topdecl"
+><TABLE CLASS="declbar"
+><TR
+><TD CLASS="declname"
+><A NAME="v:lineFadeBlend"
+><A NAME="v%3AlineFadeBlend"
+></A
+></A
+><B
+>lineFadeBlend</B
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/Data-Word.html#t%3AWord8"
+>Word8</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/Data-Word.html#t%3AWord8"
+>Word8</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+><TD CLASS="declbut"
+><A HREF="src/Graphics-UI-SDL-Sprig-Primitives.html#lineFadeBlend"
+>Source</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="doc"
+>Draw a line with a gradient fill and alpha gradient
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="section1"
+><A NAME="4"
+><A NAME="4"
+>Rectangle functions
+</A
+></A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="topdecl"
+><TABLE CLASS="declbar"
+><TR
+><TD CLASS="declname"
+><A NAME="v:rect"
+><A NAME="v%3Arect"
+></A
+></A
+><B
+>rect</B
+></TD
+><TD CLASS="declbut"
+><A HREF="src/Graphics-UI-SDL-Sprig-Primitives.html#rect"
+>Source</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="body"
+><TABLE CLASS="vanilla" CELLSPACING="0" CELLPADDING="0"
+><TR
+><TD CLASS="arg"
+>:: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+></TD
+><TD CLASS="rdoc"
+>SDL destination surface
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+></TD
+><TD CLASS="rdoc"
+>X1
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+></TD
+><TD CLASS="rdoc"
+>Y1
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+></TD
+><TD CLASS="rdoc"
+>X2
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+></TD
+><TD CLASS="rdoc"
+>Y2
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+></TD
+><TD CLASS="rdoc"
+>Color
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+><TD CLASS="rdoc"
+></TD
+></TR
+><TR
+><TD CLASS="ndoc" COLSPAN="2"
+>Draw a rectangle
+</TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="topdecl"
+><TABLE CLASS="declbar"
+><TR
+><TD CLASS="declname"
+><A NAME="v:rectFilled"
+><A NAME="v%3ArectFilled"
+></A
+></A
+><B
+>rectFilled</B
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+><TD CLASS="declbut"
+><A HREF="src/Graphics-UI-SDL-Sprig-Primitives.html#rectFilled"
+>Source</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="doc"
+>Draw a filled rectangle
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="topdecl"
+><TABLE CLASS="declbar"
+><TR
+><TD CLASS="declname"
+><A NAME="v:rectBlend"
+><A NAME="v%3ArectBlend"
+></A
+></A
+><B
+>rectBlend</B
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/Data-Word.html#t%3AWord8"
+>Word8</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+><TD CLASS="declbut"
+><A HREF="src/Graphics-UI-SDL-Sprig-Primitives.html#rectBlend"
+>Source</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="doc"
+>Draw a rectangle, with alpha blending          
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="topdecl"
+><TABLE CLASS="declbar"
+><TR
+><TD CLASS="declname"
+><A NAME="v:rectFilledBlend"
+><A NAME="v%3ArectFilledBlend"
+></A
+></A
+><B
+>rectFilledBlend</B
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/Data-Word.html#t%3AWord8"
+>Word8</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+><TD CLASS="declbut"
+><A HREF="src/Graphics-UI-SDL-Sprig-Primitives.html#rectFilledBlend"
+>Source</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="doc"
+>Draw a filled rectangle with alpha blending
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="topdecl"
+><TABLE CLASS="declbar"
+><TR
+><TD CLASS="declname"
+><A NAME="v:rectRound"
+><A NAME="v%3ArectRound"
+></A
+></A
+><B
+>rectRound</B
+></TD
+><TD CLASS="declbut"
+><A HREF="src/Graphics-UI-SDL-Sprig-Primitives.html#rectRound"
+>Source</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="body"
+><TABLE CLASS="vanilla" CELLSPACING="0" CELLPADDING="0"
+><TR
+><TD CLASS="arg"
+>:: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+></TD
+><TD CLASS="rdoc"
+>SDL destination surface
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+></TD
+><TD CLASS="rdoc"
+>X1
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+></TD
+><TD CLASS="rdoc"
+>Y1
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+></TD
+><TD CLASS="rdoc"
+>X2
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+></TD
+><TD CLASS="rdoc"
+>Y2
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+></TD
+><TD CLASS="rdoc"
+>Corner radius
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+></TD
+><TD CLASS="rdoc"
+>Color
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+><TD CLASS="rdoc"
+></TD
+></TR
+><TR
+><TD CLASS="ndoc" COLSPAN="2"
+>Draw a rounded rectangle
+</TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="topdecl"
+><TABLE CLASS="declbar"
+><TR
+><TD CLASS="declname"
+><A NAME="v:rectRoundBlend"
+><A NAME="v%3ArectRoundBlend"
+></A
+></A
+><B
+>rectRoundBlend</B
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/Data-Word.html#t%3AWord8"
+>Word8</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+><TD CLASS="declbut"
+><A HREF="src/Graphics-UI-SDL-Sprig-Primitives.html#rectRoundBlend"
+>Source</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="doc"
+>Draw a rounded rectangle with alpha blending               
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="topdecl"
+><TABLE CLASS="declbar"
+><TR
+><TD CLASS="declname"
+><A NAME="v:rectRoundFilled"
+><A NAME="v%3ArectRoundFilled"
+></A
+></A
+><B
+>rectRoundFilled</B
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+><TD CLASS="declbut"
+><A HREF="src/Graphics-UI-SDL-Sprig-Primitives.html#rectRoundFilled"
+>Source</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="doc"
+>Draw a filled rounded rectangle
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="topdecl"
+><TABLE CLASS="declbar"
+><TR
+><TD CLASS="declname"
+><A NAME="v:rectRoundFilledBlend"
+><A NAME="v%3ArectRoundFilledBlend"
+></A
+></A
+><B
+>rectRoundFilledBlend</B
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/Data-Word.html#t%3AWord8"
+>Word8</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+><TD CLASS="declbut"
+><A HREF="src/Graphics-UI-SDL-Sprig-Primitives.html#rectRoundFilledBlend"
+>Source</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="doc"
+>Draw a filled rounded rectangle with alpha blending
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="section1"
+><A NAME="5"
+><A NAME="5"
+>Arc functions
+</A
+></A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="topdecl"
+><TABLE CLASS="declbar"
+><TR
+><TD CLASS="declname"
+><A NAME="v:arc"
+><A NAME="v%3Aarc"
+></A
+></A
+><B
+>arc</B
+></TD
+><TD CLASS="declbut"
+><A HREF="src/Graphics-UI-SDL-Sprig-Primitives.html#arc"
+>Source</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="body"
+><TABLE CLASS="vanilla" CELLSPACING="0" CELLPADDING="0"
+><TR
+><TD CLASS="arg"
+>:: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+></TD
+><TD CLASS="rdoc"
+>SDL destination surface
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+></TD
+><TD CLASS="rdoc"
+>X (center)
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+></TD
+><TD CLASS="rdoc"
+>Y (center)
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+></TD
+><TD CLASS="rdoc"
+>Radius
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+></TD
+><TD CLASS="rdoc"
+>Start angle (in degrees or radians depending on Control state)
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+></TD
+><TD CLASS="rdoc"
+>End angle
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+></TD
+><TD CLASS="rdoc"
+></TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+><TD CLASS="rdoc"
+></TD
+></TR
+><TR
+><TD CLASS="ndoc" COLSPAN="2"
+>Draw an arc
+</TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="topdecl"
+><TABLE CLASS="declbar"
+><TR
+><TD CLASS="declname"
+><A NAME="v:arcBlend"
+><A NAME="v%3AarcBlend"
+></A
+></A
+><B
+>arcBlend</B
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/Data-Word.html#t%3AWord8"
+>Word8</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+><TD CLASS="declbut"
+><A HREF="src/Graphics-UI-SDL-Sprig-Primitives.html#arcBlend"
+>Source</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="doc"
+>Draw an arc, with alpha blending            
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="topdecl"
+><TABLE CLASS="declbar"
+><TR
+><TD CLASS="declname"
+><A NAME="v:arcFilled"
+><A NAME="v%3AarcFilled"
+></A
+></A
+><B
+>arcFilled</B
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+><TD CLASS="declbut"
+><A HREF="src/Graphics-UI-SDL-Sprig-Primitives.html#arcFilled"
+>Source</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="doc"
+>Draw a filled arc
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="topdecl"
+><TABLE CLASS="declbar"
+><TR
+><TD CLASS="declname"
+><A NAME="v:arcFilledBlend"
+><A NAME="v%3AarcFilledBlend"
+></A
+></A
+><B
+>arcFilledBlend</B
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/Data-Word.html#t%3AWord8"
+>Word8</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+><TD CLASS="declbut"
+><A HREF="src/Graphics-UI-SDL-Sprig-Primitives.html#arcFilledBlend"
+>Source</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="doc"
+>Draw a filled arc, with alpha blending
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="section1"
+><A NAME="6"
+><A NAME="6"
+>Ellipse functions
+</A
+></A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="topdecl"
+><TABLE CLASS="declbar"
+><TR
+><TD CLASS="declname"
+><A NAME="v:ellipse"
+><A NAME="v%3Aellipse"
+></A
+></A
+><B
+>ellipse</B
+></TD
+><TD CLASS="declbut"
+><A HREF="src/Graphics-UI-SDL-Sprig-Primitives.html#ellipse"
+>Source</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="body"
+><TABLE CLASS="vanilla" CELLSPACING="0" CELLPADDING="0"
+><TR
+><TD CLASS="arg"
+>:: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+></TD
+><TD CLASS="rdoc"
+>SDL destination surface
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+></TD
+><TD CLASS="rdoc"
+>X
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+></TD
+><TD CLASS="rdoc"
+>Y
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+></TD
+><TD CLASS="rdoc"
+>X Radius
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+></TD
+><TD CLASS="rdoc"
+>Y Radius
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+></TD
+><TD CLASS="rdoc"
+>Color
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+><TD CLASS="rdoc"
+></TD
+></TR
+><TR
+><TD CLASS="ndoc" COLSPAN="2"
+>Draw an ellipse
+</TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="topdecl"
+><TABLE CLASS="declbar"
+><TR
+><TD CLASS="declname"
+><A NAME="v:ellipseBlend"
+><A NAME="v%3AellipseBlend"
+></A
+></A
+><B
+>ellipseBlend</B
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/Data-Word.html#t%3AWord8"
+>Word8</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+><TD CLASS="declbut"
+><A HREF="src/Graphics-UI-SDL-Sprig-Primitives.html#ellipseBlend"
+>Source</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="doc"
+>Draw an ellipse, with alpha blending               
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="topdecl"
+><TABLE CLASS="declbar"
+><TR
+><TD CLASS="declname"
+><A NAME="v:ellipseFilled"
+><A NAME="v%3AellipseFilled"
+></A
+></A
+><B
+>ellipseFilled</B
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+><TD CLASS="declbut"
+><A HREF="src/Graphics-UI-SDL-Sprig-Primitives.html#ellipseFilled"
+>Source</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="doc"
+>Draw a filled ellipse
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="topdecl"
+><TABLE CLASS="declbar"
+><TR
+><TD CLASS="declname"
+><A NAME="v:ellipseFilledBlend"
+><A NAME="v%3AellipseFilledBlend"
+></A
+></A
+><B
+>ellipseFilledBlend</B
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/Data-Word.html#t%3AWord8"
+>Word8</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+><TD CLASS="declbut"
+><A HREF="src/Graphics-UI-SDL-Sprig-Primitives.html#ellipseFilledBlend"
+>Source</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="doc"
+>Draw a filled ellipse, with alpha blending
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="topdecl"
+><TABLE CLASS="declbar"
+><TR
+><TD CLASS="declname"
+><A NAME="v:ellipseArb"
+><A NAME="v%3AellipseArb"
+></A
+></A
+><B
+>ellipseArb</B
+></TD
+><TD CLASS="declbut"
+><A HREF="src/Graphics-UI-SDL-Sprig-Primitives.html#ellipseArb"
+>Source</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="body"
+><TABLE CLASS="vanilla" CELLSPACING="0" CELLPADDING="0"
+><TR
+><TD CLASS="arg"
+>:: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+></TD
+><TD CLASS="rdoc"
+>SDL destination surface
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+></TD
+><TD CLASS="rdoc"
+>X
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+></TD
+><TD CLASS="rdoc"
+>Y
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+></TD
+><TD CLASS="rdoc"
+>X radius
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+></TD
+><TD CLASS="rdoc"
+>Y radius
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+></TD
+><TD CLASS="rdoc"
+>Rotation angle (degrees/radians specified by Control State)
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+></TD
+><TD CLASS="rdoc"
+>Color
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+><TD CLASS="rdoc"
+></TD
+></TR
+><TR
+><TD CLASS="ndoc" COLSPAN="2"
+>Draw an ellipse at the given rotation angle
+</TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="topdecl"
+><TABLE CLASS="declbar"
+><TR
+><TD CLASS="declname"
+><A NAME="v:ellipseBlendArb"
+><A NAME="v%3AellipseBlendArb"
+></A
+></A
+><B
+>ellipseBlendArb</B
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/Data-Word.html#t%3AWord8"
+>Word8</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+><TD CLASS="declbut"
+><A HREF="src/Graphics-UI-SDL-Sprig-Primitives.html#ellipseBlendArb"
+>Source</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="doc"
+>Draw an arbitrary ellipse, with alpha blending                
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="topdecl"
+><TABLE CLASS="declbar"
+><TR
+><TD CLASS="declname"
+><A NAME="v:ellipseFilledBlendArb"
+><A NAME="v%3AellipseFilledBlendArb"
+></A
+></A
+><B
+>ellipseFilledBlendArb</B
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/Data-Word.html#t%3AWord8"
+>Word8</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+><TD CLASS="declbut"
+><A HREF="src/Graphics-UI-SDL-Sprig-Primitives.html#ellipseFilledBlendArb"
+>Source</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="doc"
+>Draw an arbitrary filled ellipse, with alpha blending
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="topdecl"
+><TABLE CLASS="declbar"
+><TR
+><TD CLASS="declname"
+><A NAME="v:ellipseFilledArb"
+><A NAME="v%3AellipseFilledArb"
+></A
+></A
+><B
+>ellipseFilledArb</B
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AFloat"
+>Float</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+><TD CLASS="declbut"
+><A HREF="src/Graphics-UI-SDL-Sprig-Primitives.html#ellipseFilledArb"
+>Source</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="doc"
+>Draw an arbitrary filled ellipse
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="section1"
+><A NAME="7"
+><A NAME="7"
+>Bezier curve functions
+</A
+></A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="topdecl"
+><TABLE CLASS="declbar"
+><TR
+><TD CLASS="declname"
+><A NAME="v:bezier"
+><A NAME="v%3Abezier"
+></A
+></A
+><B
+>bezier</B
+></TD
+><TD CLASS="declbut"
+><A HREF="src/Graphics-UI-SDL-Sprig-Primitives.html#bezier"
+>Source</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="body"
+><TABLE CLASS="vanilla" CELLSPACING="0" CELLPADDING="0"
+><TR
+><TD CLASS="arg"
+>:: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+></TD
+><TD CLASS="rdoc"
+>SDL destination surface
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+></TD
+><TD CLASS="rdoc"
+>Start X
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+></TD
+><TD CLASS="rdoc"
+>Start Y
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+></TD
+><TD CLASS="rdoc"
+>First Control Point X
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+></TD
+><TD CLASS="rdoc"
+>First Control Point Y
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+></TD
+><TD CLASS="rdoc"
+>Second Control Point X
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+></TD
+><TD CLASS="rdoc"
+>Second Control Point Y
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+></TD
+><TD CLASS="rdoc"
+>End X
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+></TD
+><TD CLASS="rdoc"
+>End Y
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/Data-Word.html#t%3AWord8"
+>Word8</A
+></TD
+><TD CLASS="rdoc"
+>Quality (number of intermediate points). A quality of 4-7 is normal.
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+></TD
+><TD CLASS="rdoc"
+>Color
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+><TD CLASS="rdoc"
+></TD
+></TR
+><TR
+><TD CLASS="ndoc" COLSPAN="2"
+>Draw a bezier curve
+</TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="topdecl"
+><TABLE CLASS="declbar"
+><TR
+><TD CLASS="declname"
+><A NAME="v:bezierBlend"
+><A NAME="v%3AbezierBlend"
+></A
+></A
+><B
+>bezierBlend</B
+> :: <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Types.html#t%3ASurface"
+>Surface</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Types.html#t%3AInt"
+>Int</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/Data-Word.html#t%3AWord8"
+>Word8</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/SDL/0.5.9/doc/html/Graphics-UI-SDL-Color.html#t%3APixel"
+>Pixel</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/Data-Word.html#t%3AWord8"
+>Word8</A
+> -&gt; <A HREF="http://hackage.haskell.org/packages/archive/base/4.1.0.0/doc/html/System-IO.html#t%3AIO"
+>IO</A
+> <A HREF="http://hackage.haskell.org/packages/archive/ghc-prim/0.1.0.0/doc/html/GHC-Unit.html#t%3A%28%29"
+>()</A
+></TD
+><TD CLASS="declbut"
+><A HREF="src/Graphics-UI-SDL-Sprig-Primitives.html#bezierBlend"
+>Source</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="doc"
+>Draw a bezier curve with alpha blending            
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="botbar"
+>Produced by <A HREF="http://www.haskell.org/haddock/"
+>Haddock</A
+> version 2.4.2</TD
+></TR
+></TABLE
+></BODY
+></HTML
+>
