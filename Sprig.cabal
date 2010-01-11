@@ -7,6 +7,7 @@ Build-Type: Custom
 License-File: LICENSE
 Tested-With: GHC ==6.10
 License: BSD3
+Homepage: http://liamoc.net/static/Sprig
 Build-Depends: base<5, SDL>=0.5.9
 Category: Foreign binding
 Synopsis: Binding to Sprig
